@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
-import { Button, Container } from "react-bootstrap";
+import { Button, Container, Image } from "react-bootstrap";
 import { AuthContext } from "../../Context/UserContext";
+import { FaUser } from "react-icons/fa";
+import ReactTooltip from 'react-tooltip';
 
 const Header = () => {
    const { user, logOut } = useContext(AuthContext);
@@ -26,7 +28,21 @@ const Header = () => {
                   <Link to="/course">Course</Link>
                   <Link to="/blog">Blog</Link>
                   {user ? (
-                     <Button onClick={handleLogOut} variant="outline-danger">LogOut</Button>
+                     <>
+                        <Button onClick={handleLogOut} variant="outline-danger">
+                           LogOut
+                        </Button>
+                        {user?.photoURL ? (
+                           <Image
+                              style={{ width: "40px" }}
+                              className="ms-3 rounded-circle"
+                              src={user?.photoURL}
+                              alt=""
+                           />
+                        ) : (
+                           <FaUser className="ms-3 text-white" style={{fontSize: '35px'}} />
+                        )}
+                     </>
                   ) : (
                      <>
                         <Link to="/registration">Registration</Link>
