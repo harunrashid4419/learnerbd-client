@@ -5,12 +5,14 @@ import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Context/UserContext";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const Registration = () => {
-   const { createUser, googleSignIn, profileUpdate } = useContext(AuthContext);
+   const { createUser, googleSignIn, profileUpdate, githubSignIn } =
+      useContext(AuthContext);
    const navigate = useNavigate();
 
    const handleRegistration = (event) => {
@@ -40,6 +42,17 @@ const Registration = () => {
             console.log(user);
          })
          .catch((error) => console.log("error ", error));
+   };
+
+   const handleGithubLogIn = () => {
+      githubSignIn(githubProvider)
+         .then((result) => {
+            const user = result.user;
+            console.log(user);
+         })
+         .catch((error) => {
+            console.log("error ", error);
+         });
    };
 
    const updateProfileNameAndURL = (name, photoURL) => {
@@ -118,7 +131,12 @@ const Registration = () => {
                   >
                      <FaGoogle /> Google SignIn
                   </Button>
-                  <Button className="w-100" variant="success" type="submit">
+                  <Button
+                     onClick={handleGithubLogIn}
+                     className="w-100"
+                     variant="success"
+                     type="submit"
+                  >
                      <FaGithub /> Github SignIn
                   </Button>
                </div>
