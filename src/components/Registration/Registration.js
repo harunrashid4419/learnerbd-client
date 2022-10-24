@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Context/UserContext";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
@@ -14,6 +14,7 @@ const Registration = () => {
    const { createUser, googleSignIn, profileUpdate, githubSignIn } =
       useContext(AuthContext);
    const navigate = useNavigate();
+   const [showPassword, setShowPassword] = useState(false);
 
    const handleRegistration = (event) => {
       event.preventDefault();
@@ -100,13 +101,29 @@ const Registration = () => {
                   />
                </Form.Group>
 
-               <Form.Group className="mb-3" controlId="formBasicPassword">
+               <Form.Group
+                  className="mb-3 position-relative"
+                  controlId="formBasicPassword"
+               >
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                      name="password"
-                     type="password"
+                     type={showPassword ? "text" : "password"}
                      placeholder="*********"
                   />
+                  <div onClick={() => setShowPassword(!showPassword)}>
+                     {showPassword ? (
+                        <FaEye
+                           className="position-absolute end-0 top-0"
+                           style={{ marginTop: "43px", marginRight: "10px" }}
+                        />
+                     ) : (
+                        <FaEyeSlash
+                           className="position-absolute end-0 top-0"
+                           style={{ marginTop: "43px", marginRight: "10px" }}
+                        />
+                     )}
+                  </div>
                </Form.Group>
 
                <Form.Group className="mb-3" controlId="formBasicCheckbox">
