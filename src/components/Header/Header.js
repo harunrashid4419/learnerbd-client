@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Button, Container, Image } from "react-bootstrap";
 import { AuthContext } from "../../Context/UserContext";
 import { FaUser } from "react-icons/fa";
-import ReactTooltip from 'react-tooltip';
 
 const Header = () => {
    const { user, logOut } = useContext(AuthContext);
@@ -40,7 +39,10 @@ const Header = () => {
                               alt=""
                            />
                         ) : (
-                           <FaUser className="ms-3 text-white" style={{fontSize: '35px'}} />
+                           <FaUser
+                              className="ms-3 text-white"
+                              style={{ fontSize: "35px" }}
+                           />
                         )}
                      </>
                   ) : (

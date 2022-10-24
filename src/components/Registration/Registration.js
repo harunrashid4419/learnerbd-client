@@ -10,7 +10,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 const googleProvider = new GoogleAuthProvider();
 
 const Registration = () => {
-   const { createUser, googleSignIn } = useContext(AuthContext);
+   const { createUser, googleSignIn, profileUpdate } = useContext(AuthContext);
    const navigate = useNavigate();
 
    const handleRegistration = (event) => {
@@ -25,6 +25,7 @@ const Registration = () => {
          .then((result) => {
             const user = result.user;
             console.log(user);
+            updateProfileNameAndURL(name, photoURL);
             navigate("/login");
          })
          .catch((error) => {
@@ -39,6 +40,14 @@ const Registration = () => {
             console.log(user);
          })
          .catch((error) => console.log("error ", error));
+   };
+
+   const updateProfileNameAndURL = (name, photoURL) => {
+      const profile = {
+         displayName: name,
+         photoURL: photoURL,
+      };
+      profileUpdate(profile);
    };
 
    return (
