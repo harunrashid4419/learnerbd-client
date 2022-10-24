@@ -28,6 +28,7 @@ const Registration = () => {
          .then((result) => {
             const user = result.user;
             console.log(user);
+            event.target.reset();
             updateProfileNameAndURL(name, photoURL);
             navigate("/login");
          })
