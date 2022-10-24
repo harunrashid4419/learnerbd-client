@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -8,6 +8,7 @@ import { AuthContext } from "../../Context/UserContext";
 
 const Login = () => {
     const { userLogIn } = useContext(AuthContext);
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleLogIn = event =>{
@@ -24,6 +25,7 @@ const Login = () => {
             })
             .catch( error =>{
                 console.log('error ', error)
+                setError(error.message);
             })
     }
 
@@ -43,7 +45,7 @@ const Login = () => {
                   <Form.Label>Password</Form.Label>
                   <Form.Control name='password' type="password" placeholder="*********" />
                </Form.Group>
-
+               <p className="text-danger">{error}</p>
                <Button className="w-100" variant="primary" type="submit">
                   LogIn
                </Button>
