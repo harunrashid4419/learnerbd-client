@@ -1,28 +1,42 @@
-.form-section{
+.form{
     width: 60%;
     margin: 0 auto;
-    padding: 20px 50px;
+    padding: 50px 50px;
     border: 1px solid black;
     margin-top: 50px;
 }
-.form-section .name{
+.form .name{
     width: 100%;
-    margin-bottom: 20px;
     padding: 10px 10px;
     border-radius: 5px;
     border: none;
 }
-.form-section .email{
+.form .email{
     width: 100%;
-    margin-bottom: 20px;
 }
-.form-section .city{
-    width: 49%;
-    margin-right: 1%;
-    margin-bottom: 20px;
-}
-.form-section .country{
+.form .city{
     width: 49%;
     margin-left: 1%;
-    margin-bottom: 20px;
+}
+.form .number{
+    width: 49%;
+    margin-left: 1%;
+}
+.form .address{
+    width: 49%;
+    margin-right: 1%;
+}
+.form .country{
+    width: 49%;
+    margin-right: 1%;
+}
+#course-info span{
+    color: #ff852b;
+    font-weight: 700;
+    font-size: 22px;
+}
+.process-btn{
+    border: none;
+    padding: 8px 40px;
+    transition: .5s;
 }
