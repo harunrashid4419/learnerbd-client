@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Context/UserContext";
 
@@ -11,6 +11,8 @@ const Login = () => {
    const [error, setError] = useState("");
    const [showPassword, setShowPassword] = useState(false);
    const navigate = useNavigate();
+   const location = useLocation();
+   const from = location.state?.from?.pathname || "/";
 
    const handleLogIn = (event) => {
       event.preventDefault();
@@ -23,13 +25,14 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             event.target.reset();
-            navigate("/home");
+            navigate(from, { replace: true });
          })
          .catch((error) => {
             console.log("error ", error);
             setError(error.message);
          });
    };
+
 
    return (
       <Container className="my-5 pt-5">
