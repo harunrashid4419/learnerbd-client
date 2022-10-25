@@ -1,0 +1,22 @@
+.header-bg{
+    background-color: #e5d0b1;
+    padding: 10px 0;
+}
+.top-header{
+    display: flex;
+    justify-content: space-between;
+}
+.info p{
+    margin: 0;
+    color: black;
+}
+.social-icon{
+    display: flex;
+    align-items: center;
+}
+.social-icon a{
+    color: black;
+    padding: 0 10px;
+    font-size: 22px;
+    transition: .5s;
+}
