@@ -1,0 +1,24 @@
+.blog-section{
+    max-width: 1240px;
+    padding: 50px;
+    margin: 0 auto;
+}
+.question{
+    border: 1px solid rgba(0, 0, 0, 0.288);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.question h3{
+    color: green;
+    font-weight: 700;
+}
+.question p{
+    color: gray;
+    margin: 0 0 0 15px;
+}
+@media screen and (max-width: 776px) {
+    .blog-section{
+        padding: 30px;
+    }
+}

@@ -1,6 +1,10 @@
 .main-details{
     background-color: #e5d0b1c2;
 }
+.details{
+    max-width: 1240px;
+    padding: 0 50px;
+}
 .course-details{
     display: flex;
     padding: 50px 0;
@@ -11,4 +15,17 @@
 .course-details .right-side{
     width: 45%;
     margin-left: 5%;
+}
+@media screen and (max-width: 992px) {
+    .course-details{
+        display: block;
+    }
+    .course-details .left-side{
+        width: 100%;
+    }
+    .course-details .right-side{
+        width: 100%;
+        padding-top: 50px;
+        margin-left: 0;
+    }
 }

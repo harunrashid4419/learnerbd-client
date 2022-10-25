@@ -56,6 +56,7 @@ const Premium = () => {
                   >
                      <Form.Control
                         type="text"
+                        required
                         placeholder=" Enter your Address"
                      />
                   </Form.Group>
@@ -83,7 +84,8 @@ const Premium = () => {
                   >
                      <Form.Control
                         type="number"
-                        placeholder=" Enter phone number"
+                        required
+                        placeholder=" +880"
                      />
                   </Form.Group>
                </div>
