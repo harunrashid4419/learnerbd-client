@@ -8,15 +8,16 @@ const SingleCourse = ({ course }) => {
    console.log(course);
    return (
       <div>
-         <div className="single-course">
-            <img src={image} alt="" />
-            <span className="text-danger">Price: ${price}</span>
-            <div className="d-flex justify-content-between mt-2">
-               <h4>{name}</h4>
-               <span className="text-danger">Rating: {rating.number}</span>
+         <Link to={`../course/${id}`} className="single-course">
+            <div>
+                <img src={image} alt="" />
             </div>
-            <Link to={`../course/${id}`}><Button className="w-100 my-3" variant="primary">Details</Button></Link>
-         </div>
+            <div className="course-content">
+                <h2 className="mb-3">{name}</h2>
+                <span className="text-white">Rating: {rating.number}</span>
+                <span className="text-white ms-3">Price: ${price}</span>
+            </div>
+        </Link>
       </div>
    );
 };

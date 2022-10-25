@@ -1,0 +1,14 @@
+.main-details{
+    background-color: #e5d0b1c2;
+}
+.course-details{
+    display: flex;
+    padding: 50px 0;
+}
+.course-details .left-side{
+    width: 50%;
+}
+.course-details .right-side{
+    width: 45%;
+    margin-left: 5%;
+}
