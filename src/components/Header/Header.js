@@ -24,7 +24,7 @@ const Header = () => {
                </div>
                <div className="menu">
                   <Link to="/home">Home</Link>
-                  <Link to="/course">Course</Link>
+                  <Link to="/courses">Courses</Link>
                   <Link to="/blog">Blog</Link>
                   {user ? (
                      <>

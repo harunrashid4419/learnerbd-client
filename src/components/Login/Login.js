@@ -81,14 +81,10 @@ const Login = () => {
                   <Link to="/registration">Registration</Link>
                </p>
                <div className="text-center">
-                  <Button
-                     className="w-100 mb-3"
-                     variant="success"
-                     type="submit"
-                  >
+                  <Button className="w-100 mb-3" variant="success">
                      <FaGoogle /> Google SignIn
                   </Button>
-                  <Button className="w-100" variant="success" type="submit">
+                  <Button className="w-100" variant="success">
                      <FaGithub /> Github SignIn
                   </Button>
                </div>
