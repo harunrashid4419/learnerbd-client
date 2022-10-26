@@ -1,0 +1,56 @@
+.main-learning{
+    background-color: #deb887;
+    padding: 80px 10px;
+}
+.learning-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.learning-container .img img{
+    width: 100%;
+}
+.learning-container .content{
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    width: 95%;
+}
+.learning-container .content h3{
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+}
+.learning-container .content span{
+    color: #564991;
+    font-size: 32px;
+    font-weight: 700;
+}
+.learning-container .content p{
+    color: black;
+    line-height: 24px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+.learning-container .content a{
+    background-color: #0B5ED7;
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: .5s;
+}
+.learning-container .content a:hover{
+    background-color: #d70bcd;
+}
+
+@media screen and (max-width: 776px) {
+    .learning-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .learning-container .content{
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,99 @@
+.main-section{
+    background-color: #3c5499;
+    text-align: center;
+    padding: 45px 0px 30px 0px;
+}
+.touch-section{
+    width: 80%;
+    margin: 0 auto;
+}
+.touch-section h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 32px 0;
+    position: relative;
+    margin-bottom: 40px;
+}
+.touch-section h1::after{
+    content: '';
+    height: 4px;
+    width: 87px;
+    position: absolute;
+    background-color: #273a71;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.touch-section .name{
+    width: 47%;
+    margin-right: 2%;
+    background: #273a71;
+    border: none;
+    padding: 15px 0px;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 18px;
+}
+.touch-section .name::placeholder,
+.touch-section .email::placeholder,
+.touch-section textarea::placeholder{
+    color: white;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.touch-section .email{
+    width: 48%;
+    margin-left: 2%;
+    background: #273a71;
+    border: none;
+    padding: 15px 0px;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 18px;
+}
+.touch-section textarea{
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    background: #273a71;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+.touch-section .send-button{
+    margin: 30px auto ;
+}
+.touch-section a{
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    background: #30bae7;
+    padding: 15px 65px;
+    border-radius: 3px;
+    box-shadow: 0 4px 0 #299ec5;
+    transition: .6s;
+}
+.touch-section  a:hover{
+    background: transparent;
+    border: 1px solid #30bae7;
+    color: white;
+}
+
+@media screen and (max-width: 776px) {
+    .touch-section{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .touch-section textarea{
+        height: 200px;
+    }
+    .touch-section .email,
+    .touch-section .name{
+        width: 100%;
+        margin-left: 0%;
+        margin-bottom: 20px;
+    }
+}

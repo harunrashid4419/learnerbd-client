@@ -3,6 +3,12 @@
     padding: 50px;
     margin: 0 auto;
 }
+.blog-section h1{
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    color: black;
+}
 .question{
     border: 1px solid rgba(0, 0, 0, 0.288);
     padding: 20px;

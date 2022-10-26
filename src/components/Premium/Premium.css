@@ -40,3 +40,22 @@
     padding: 8px 40px;
     transition: .5s;
 }
+
+@media screen and (max-width: 992px) {
+    .form{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 776px) {
+    .form{
+        padding: 30px 20px;
+        border: 1px solid black;
+        margin-top: 50px;
+    }
+    #course-info span{
+        display: block;
+    }
+    .course-id{
+        display: block;
+    }
+}

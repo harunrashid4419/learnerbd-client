@@ -13,7 +13,7 @@ const Premium = () => {
       <div className="py-5 bg-secondary">
          <Container>
             <div className="d-flex justify-content-between align-items-center">
-               <h3 className="text-white">Course ID: {courseDetails.id}</h3>
+               <h3 className="text-white">Course ID: <span className="course-id">{courseDetails.id}</span></h3>
                <Image
                   style={{ width: "70px" }}
                   className="ms-3 rounded-circle"

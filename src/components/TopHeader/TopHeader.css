@@ -20,3 +20,13 @@
     font-size: 22px;
     transition: .5s;
 }
+
+@media screen and (max-width: 576px) {
+    .top-header{
+        display: block;
+    }
+    .social-icon{
+        width: 100%;
+        text-align: center;
+    }
+}

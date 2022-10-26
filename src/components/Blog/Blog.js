@@ -4,6 +4,7 @@ import "./Blog.css";
 const Blog = () => {
    return (
       <div className="blog-section">
+         <h1>Question and Answer:-</h1>
          <div className="question">
             <h3>1. What is cors?</h3>
             <div>

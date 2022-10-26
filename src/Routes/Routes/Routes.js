@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../../components/Blog/Blog";
 import CourseDetails from "../../components/CourseDetails/CourseDetails";
