@@ -16,6 +16,7 @@ const Registration = () => {
    const navigate = useNavigate();
    const [showPassword, setShowPassword] = useState(false);
    const [disabled, setDisabled] = useState(false);
+   const [error, setError] = useState('');
 
    const handleRegistration = (event) => {
       event.preventDefault();
@@ -30,11 +31,13 @@ const Registration = () => {
             const user = result.user;
             console.log(user);
             event.target.reset();
+            setError('');
             updateProfileNameAndURL(name, photoURL);
             navigate("/login");
          })
          .catch((error) => {
             console.log("error ", error);
+            setError(error.message);
          });
    };
 
@@ -72,9 +75,8 @@ const Registration = () => {
 
    return (
       <Container className="my-5 pt-5">
-         <div
+         <div id='form-section'
             className="border py-5 px-4 border-2 rounded mx-auto"
-            style={{ width: "500px" }}
          >
             <h4 className="mb-3 text-success text-center">
                Please Registration
@@ -138,6 +140,7 @@ const Registration = () => {
                      label="Accepts terms and conditions"
                   />
                </Form.Group>
+               {error}
                <Button
                   className="w-100"
                   variant="primary"

@@ -1,15 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../Context/UserContext";
+import { toast } from "react-toastify";
+import './Login.css';
 
 const Login = () => {
-   const { userLogIn } = useContext(AuthContext);
+   const { userLogIn, passwordForget } = useContext(AuthContext);
    const [error, setError] = useState("");
    const [showPassword, setShowPassword] = useState(false);
+   const [userEmail, setUserEmail] = useState('');
    const navigate = useNavigate();
    const location = useLocation();
    const from = location.state?.from?.pathname || "/";
@@ -23,7 +26,7 @@ const Login = () => {
       userLogIn(email, password)
          .then((result) => {
             const user = result.user;
-            console.log(user)
+            console.log(user);
             event.target.reset();
             navigate(from, { replace: true });
          })
@@ -33,18 +36,30 @@ const Login = () => {
          });
    };
 
+   const handleEmailAddress = (event) => {
+      const email = event.target.value;
+      setUserEmail(email);
+   };
+
+   const handleResetPassword = () => {
+      passwordForget(userEmail)
+         .then(() =>{
+            toast.info('check you email address and reset your password')
+         })
+         .catch((error) => console.log(error));
+   };
 
    return (
       <Container className="my-5 pt-5">
-         <div
+         <div id='form-section'
             className="border py-5 px-4 border-2 rounded mx-auto"
-            style={{ width: "500px" }}
          >
             <h4 className="mb-3 text-success text-center">Please Login</h4>
             <Form onSubmit={handleLogIn}>
                <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>
                   <Form.Control
+                     onBlur={handleEmailAddress}
                      name="email"
                      type="email"
                      placeholder="Enter email"
@@ -52,7 +67,7 @@ const Login = () => {
                </Form.Group>
 
                <Form.Group
-                  className="mb-3 position-relative"
+                  className="mb-3  position-relative"
                   controlId="formBasicPassword"
                >
                   <Form.Label>Password</Form.Label>
@@ -61,6 +76,9 @@ const Login = () => {
                      type={showPassword ? "text" : "password"}
                      placeholder="*********"
                   />
+                  <p onClick={handleResetPassword} className="mt-2">
+                     <Link>Forgotten password?</Link>
+                  </p>
                   <div onClick={() => setShowPassword(!showPassword)}>
                      {showPassword ? (
                         <FaEye
@@ -83,14 +101,6 @@ const Login = () => {
                   Don't have any account{" "}
                   <Link to="/registration">Registration</Link>
                </p>
-               {/* <div className="text-center">
-                  <Button className="w-100 mb-3" variant="success">
-                     <FaGoogle /> Google SignIn
-                  </Button>
-                  <Button className="w-100" variant="success">
-                     <FaGithub /> Github SignIn
-                  </Button>
-               </div> */}
             </Form>
          </div>
       </Container>

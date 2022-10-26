@@ -1,0 +1,8 @@
+#form-section{
+    width: 500px;
+}
+@media screen and (max-width: 576px) {
+    #form-section{
+        width: 300px;
+    }
+}

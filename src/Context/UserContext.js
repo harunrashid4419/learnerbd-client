@@ -4,6 +4,7 @@ import {
    createUserWithEmailAndPassword,
    getAuth,
    onAuthStateChanged,
+   sendPasswordResetEmail,
    signInWithEmailAndPassword,
    signInWithPopup,
    signOut,
@@ -57,6 +58,11 @@ const UserContext = ({ children }) => {
       return updateProfile(auth.currentUser, profile);
    };
 
+   const passwordForget = (email) =>{
+      setLoading(true);
+      return sendPasswordResetEmail(auth, email);
+   }
+
    const authInfo = {
       createUser,
       user,
@@ -66,6 +72,7 @@ const UserContext = ({ children }) => {
       profileUpdate,
       githubSignIn,
       loading,
+      passwordForget,
    };
    return (
       <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
