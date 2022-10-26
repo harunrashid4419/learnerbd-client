@@ -4,6 +4,7 @@ import learnImg from "../../assets/images/rear-view-programmer-working-all-night
 import { Link } from "react-router-dom";
 import StudentTalent from "../OthersPage/StudentTalent/StudentTalent";
 import GetTouch from "../OthersPage/GetTouch/GetTouch";
+import Socket from "../OthersPage/Socket/Socket";
 
 const Learning = () => {
    return (
@@ -33,6 +34,7 @@ const Learning = () => {
          </div>
          <StudentTalent></StudentTalent>
          <GetTouch></GetTouch>
+         <Socket></Socket>
       </div>
    );
 };

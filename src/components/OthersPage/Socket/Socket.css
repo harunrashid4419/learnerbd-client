@@ -1,0 +1,78 @@
+.main-container{
+    background: rgb(34, 34, 34);
+    padding: 50px;
+}
+.main-socket{
+    display: flex;
+}
+.main-container .left-side{
+    width: 45%;
+}
+.main-container .left-side h3{
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+}
+.main-container .left-side p{
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+}
+.main-container .right-side{
+    width: 55%;
+    margin-left: 10%;
+}
+.main-container .right-side h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+.main-container .right-side .main-right{
+    display: flex;
+}
+.main-container .right-side .contact-section p{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 7px;
+}
+.main-container .right-side .hours{
+    margin-left: 20px;
+}
+.main-container .right-side .hours h4{
+        font-size: 14px;
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+        line-height: 5px;
+        margin-bottom: 20px;
+}
+.main-container .right-side .hours span{
+        font-weight: 400;
+}
+.main-container .img img{
+    width: 70px;
+    margin: 10px 20px;
+}
+
+@media screen and (max-width: 992px) {
+    .main-container .right-side .main-right {
+        display: block;
+    }
+    .main-container .right-side .hours {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 776px) {
+    .main-socket {
+        display: block;
+    }
+    .main-container .left-side {
+        width: 100%;
+    }
+    .main-container .right-side {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 30px;
+    }
+}
