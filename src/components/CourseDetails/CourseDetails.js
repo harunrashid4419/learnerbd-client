@@ -8,6 +8,7 @@ import coadingImage from '../../assets/images/3659197.jpg';
 
 const CourseDetails = () => {
    const details = useLoaderData();
+   console.log(details);
 
    const downloadPDF = () =>{
       const document = new jsPDF ('landscope', 'px', 'a4', 'false');
@@ -26,9 +27,13 @@ const CourseDetails = () => {
                </div>
                <div className="right-side d-flex align-items-center">
                   <div>
-                     <h3>{details.title}</h3>
+                     <h3 className="mb-4">{details.title}</h3>
+                     <h5>What you will learn from this course?</h5>
+                     <p>{details.learn}</p>
+                     <h5>Overview:</h5>
                      <p>{details.details}</p>
-
+                     <span className="text-danger fs-1"><del>${details.previous_price}</del></span>
+                     <span className="text-success ms-3 fs-1">${details.price}</span>
                      <div className="mt-4">
                         <Link>
                            <Button

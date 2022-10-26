@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
-import { Button, Container, Image, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Image } from "react-bootstrap";
 import { AuthContext } from "../../Context/UserContext";
 import { FaBars, FaTimes, FaUser } from "react-icons/fa";
 import TopHeader from "../TopHeader/TopHeader";
@@ -9,7 +9,7 @@ import ReactTooltip from "react-tooltip";
 
 const Header = () => {
    const { user, logOut } = useContext(AuthContext);
-   const [open, setOpen] = useState(false);
+   const [dark, setDark] = useState(false);
    console.log(user);
 
    const handleLogOut = () => {
@@ -31,6 +31,7 @@ const Header = () => {
                      <Link to="/home">Home</Link>
                      <Link to="/courses">Courses</Link>
                      <Link to="/blog">Blog</Link>
+
                      {user ? (
                         <>
                            <Button
@@ -63,6 +64,13 @@ const Header = () => {
                            <ReactTooltip />
                         </>
                      )}
+                     <span className="ms-2" onClick= {() => setDark(!dark)}>
+                        {dark ? (
+                           <Button variant="primary">Light</Button>
+                           ) : (
+                           <Button variant="primary">Dark</Button>
+                        )}
+                     </span>
                   </div>
                </nav>
             </Container>

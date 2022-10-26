@@ -46,3 +46,16 @@ img{
     color: white;
     font-size: 18px;
 }
+.course-discount {
+    position: absolute;
+    top: -23px;
+    left: -23px;
+    text-decoration: none;
+    background-color: #270B54;
+    color: white;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    line-height: 65px;
+    padding-left: 4px;
+}
