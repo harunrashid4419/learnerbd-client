@@ -5,6 +5,7 @@ import { Button, Container, Image, Nav, Navbar } from "react-bootstrap";
 import { AuthContext } from "../../Context/UserContext";
 import { FaBars, FaTimes, FaUser } from "react-icons/fa";
 import TopHeader from "../TopHeader/TopHeader";
+import ReactTooltip from "react-tooltip";
 
 const Header = () => {
    const { user, logOut } = useContext(AuthContext);
@@ -27,38 +28,42 @@ const Header = () => {
                      <Link to="/">FreeLearn</Link>
                   </div>
                   <div className="menu">
-                        <Link to="/home">Home</Link>
-                        <Link to="/courses">Courses</Link>
-                        <Link to="/blog">Blog</Link>
-                        {user ? (
-                           <>
-                              <Button
-                                 onClick={handleLogOut}
-                                 variant="outline-danger"
-                              >
-                                 LogOut
-                              </Button>
-                              {user?.photoURL ? (
-                                 <Image
-                                    style={{ width: "40px" }}
-                                    className="ms-3 rounded-circle"
-                                    src={user?.photoURL}
-                                    alt=""
-                                 />
-                              ) : (
-                                 <FaUser
-                                    className="ms-3 text-white"
-                                    style={{ fontSize: "35px" }}
-                                 />
-                              )}
-                           </>
-                        ) : (
-                           <>
-                              <Link to="/registration">Registration</Link>
-                              <Link to="/login">LogIn</Link>
-                           </>
-                        )}
-                     </div>
+                     <Link to="/home">Home</Link>
+                     <Link to="/courses">Courses</Link>
+                     <Link to="/blog">Blog</Link>
+                     {user ? (
+                        <>
+                           <Button
+                              onClick={handleLogOut}
+                              variant="outline-danger"
+                           >
+                              <ReactTooltip />
+                              LogOut
+                           </Button>
+                           {user?.photoURL ? (
+                              <Image
+                                 data-tip={user?.displayName}
+                                 style={{ width: "40px" }}
+                                 className="ms-3 rounded-circle"
+                                 src={user?.photoURL}
+                                 alt=""
+                              />
+                           ) : (
+                              <FaUser
+                                 data-tip={user?.displayName}
+                                 className="ms-3 text-white"
+                                 style={{ fontSize: "35px" }}
+                              />
+                           )}
+                        </>
+                     ) : (
+                        <>
+                           <Link to="/registration">Registration</Link>
+                           <Link to="/login">LogIn</Link>
+                           <ReactTooltip />
+                        </>
+                     )}
+                  </div>
                </nav>
             </Container>
          </div>

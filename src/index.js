@@ -7,11 +7,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import UserContext from "./Context/UserContext";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ReactTooltip from "react-tooltip";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
    <React.StrictMode>
       <UserContext>
+      <ReactTooltip />
          <ToastContainer/>
          <App />
       </UserContext>
