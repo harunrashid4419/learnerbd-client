@@ -23,7 +23,7 @@ const Login = () => {
       userLogIn(email, password)
          .then((result) => {
             const user = result.user;
-            console.log(user);
+            console.log(user)
             event.target.reset();
             navigate(from, { replace: true });
          })

@@ -3,9 +3,18 @@ import "./CourseDetails.css";
 import { Button } from "react-bootstrap";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaDownload } from "react-icons/fa";
+import jsPDF from 'jspdf';
+import coadingImage from '../../assets/images/3659197.jpg';
 
 const CourseDetails = () => {
    const details = useLoaderData();
+
+   const downloadPDF = () =>{
+      const document = new jsPDF ('landscope', 'px', 'a4', 'false');
+      document.addImage(coadingImage, 'PNG', 65,20,500,400);
+      document.save('CoadingImage.pdf')
+   }
+
    return (
       <div className="main-details">
          <div className="details">
@@ -23,6 +32,7 @@ const CourseDetails = () => {
                      <div className="mt-4">
                         <Link>
                            <Button
+                           onClick={downloadPDF}
                               className="text-dark font-bold"
                               variant="outline-primary"
                            >
