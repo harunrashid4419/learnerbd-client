@@ -15,6 +15,7 @@ const Registration = () => {
       useContext(AuthContext);
    const navigate = useNavigate();
    const [showPassword, setShowPassword] = useState(false);
+   const [disabled, setDisabled] = useState(false);
 
    const handleRegistration = (event) => {
       event.preventDefault();
@@ -65,6 +66,10 @@ const Registration = () => {
       profileUpdate(profile);
    };
 
+   const handleToggle = event =>{
+      setDisabled(event.target.checked);
+   }
+
    return (
       <Container className="my-5 pt-5">
          <div
@@ -81,9 +86,9 @@ const Registration = () => {
                      name="name"
                      type="text"
                      placeholder="Enter Name"
+                     required
                   />
                </Form.Group>
-
                <Form.Group className="mb-3" controlId="formBasicText2">
                   <Form.Label>Photo URL</Form.Label>
                   <Form.Control
@@ -92,16 +97,15 @@ const Registration = () => {
                      placeholder="PhotoURL"
                   />
                </Form.Group>
-
                <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>
                   <Form.Control
                      name="email"
                      type="email"
                      placeholder="Enter email"
+                     required
                   />
                </Form.Group>
-
                <Form.Group
                   className="mb-3 position-relative"
                   controlId="formBasicPassword"
@@ -110,6 +114,7 @@ const Registration = () => {
                   <Form.Control
                      name="password"
                      type={showPassword ? "text" : "password"}
+                     required
                      placeholder="*********"
                   />
                   <div onClick={() => setShowPassword(!showPassword)}>
@@ -126,15 +131,19 @@ const Registration = () => {
                      )}
                   </div>
                </Form.Group>
-
                <Form.Group className="mb-3" controlId="formBasicCheckbox">
                   <Form.Check
+                     onClick={handleToggle}
                      type="checkbox"
                      label="Accepts terms and conditions"
                   />
                </Form.Group>
-
-               <Button className="w-100" variant="primary" type="submit">
+               <Button
+                  className="w-100"
+                  variant="primary"
+                  disabled={!disabled}
+                  type="submit"
+               >
                   Registration
                </Button>
                <p className="text-center mt-3">

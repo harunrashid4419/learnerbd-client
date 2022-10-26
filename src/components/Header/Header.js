@@ -66,9 +66,9 @@ const Header = () => {
                      )}
                      <span className="ms-2" onClick= {() => setDark(!dark)}>
                         {dark ? (
-                           <Button variant="primary">Light</Button>
+                           <Button variant="light">Light</Button>
                            ) : (
-                           <Button variant="primary">Dark</Button>
+                           <Button variant="dark">Dark</Button>
                         )}
                      </span>
                   </div>
