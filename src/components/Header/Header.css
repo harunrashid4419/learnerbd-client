@@ -7,18 +7,12 @@
     align-items: center;
     padding: 15px 0;
 }
-/* .header .left{
-    width: 20%;
-}
-.header .menu{
-    width: 80%;
-    text-align: right;
-} */
-.header .left a{
+.left-side{
     text-decoration: none;
     color: white;
     font-size: 24px;
     font-weight: 800;
+    transition: .5s;
 }
 .menu a{
     color: white;
@@ -32,4 +26,11 @@
     color: white;
     font-size: 25px;
     display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .menu a{
+        display: block;
+        margin-bottom: 15px;
+    }
 }

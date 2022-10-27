@@ -48,14 +48,20 @@ img{
 }
 .course-discount {
     position: absolute;
-    top: -23px;
-    left: -23px;
+    top: -17px;
+    left: -17px;
     text-decoration: none;
     background-color: #270B54;
     color: white;
-    height: 65px;
-    width: 65px;
+    height: 55px;
+    width: 55px;
     border-radius: 50%;
-    line-height: 65px;
+    line-height: 55px;
     padding-left: 4px;
+    font-size: 12px;
+}
+@media screen and (max-width: 576px) {
+    .course-discount {
+        display: none;
+    }
 }
