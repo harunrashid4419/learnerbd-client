@@ -31,7 +31,7 @@ const Header = () => {
          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
                <Link className="left-side" to="/">
-                  FreeLearn
+                  LEARNER-BD
                </Link>
                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                <Navbar.Collapse id="responsive-navbar-nav">

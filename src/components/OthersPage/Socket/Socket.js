@@ -11,8 +11,8 @@ const Socket = () => {
         <div className='main-container'>
             <div className='main-socket'>
                 <div className='left-side'>
-                    <h3>FreeLearn</h3>
-                    <p>Lilac City Dental is located in Spokane, Washington. Our dental practice offers the latest in dental technology and provides a friendly, relaxed atmosphere. Dr. Robert Renck is an experienced dentist and our staff is highly trained. We care for patients with regular checkups and cleanings, and perform in-depth procedures such as teeth pulling, teeth straightening, surgery, crowns, fillings, caps, root canals, wisdom teeth removal, whitening, dental implants, and more. We pride ourselves on excellent customer service at all times.</p>
+                    <h3>LEARNER-BD</h3>
+                    <p>Today's internet world. If you want to know something, you have to use the internet. In this age of competition there is no substitute for knowledge. Programming can be the most accepted subject to build one's career in this era. So learn programming and build your career. We are on your side. Build your career by taking our courses.</p>
                 </div>
                 <div className='right-side'>
                     <div className='main-right'>

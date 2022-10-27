@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Context/UserContext";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
@@ -34,6 +35,7 @@ const Registration = () => {
             setError('');
             updateProfileNameAndURL(name, photoURL);
             navigate("/login");
+            toast.success('Registration success')
          })
          .catch((error) => {
             console.log("error ", error);
@@ -46,6 +48,8 @@ const Registration = () => {
          .then((result) => {
             const user = result.user;
             console.log(user);
+            toast.success('google signup success')
+            navigate("/");
          })
          .catch((error) => console.log("error ", error));
    };
@@ -55,6 +59,8 @@ const Registration = () => {
          .then((result) => {
             const user = result.user;
             console.log(user);
+            toast.success('github signup success')
+            navigate("/");
          })
          .catch((error) => {
             console.log("error ", error);
