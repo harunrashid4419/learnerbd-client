@@ -8,7 +8,6 @@ import coadingImage from '../../assets/images/3659197.jpg';
 
 const CourseDetails = () => {
    const details = useLoaderData();
-   console.log(details);
 
    const downloadPDF = () =>{
       const document = new jsPDF ('landscope', 'px', 'a4', 'false');
